@@ -1,0 +1,36 @@
+* {
+    margin: o;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body ,html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: #od0d0d;  /* fallback for old browsers */
+    text-align: left;
+    font-size: 40px;
+    color: white;
+    background-color: black;
+}
+
+input {
+    color:black;
+    border-radius: 20px;
+    padding: 5px;
+
+    
+}
+
+button {
+    border-radius: 10px;
+    padding: 5px;
+    filter: drop-shadow(10px 10px 20px black);
+}
+
+h2 {
+    text-decoration: underline;
+    text-align: center;
+}
+
+

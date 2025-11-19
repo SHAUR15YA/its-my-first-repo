@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Percent Calculator</title>
+  <link rel = "stylesheet" href="percent_calculator.css"></link>
+  <style>
+    body{font-family: Arial; padding:24px}
+    label, input{display:block; margin:8px 0}
+    .result{margin-top:12px; font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="container>"
+  </div>
+  <h2>Percent Calculator</h2>
+  <label>Obtained Marks
+    <input id="obtained" type="number" step="any" placeholder="e.g. 45">
+  </label>
+  <label>Total Marks
+    <input id="total" type="number" step="any" placeholder="e.g. 60">
+  </label>
+  <button id="calc">Calculate</button>
+  <div class="result" id="result" aria-live="polite"></div>
+
+  <script src="percent%20calculator.js"></script>
+  <script>
+    // wire up UI to function defined in the JS file
+    const btn = document.getElementById('calc');
+    const out = document.getElementById('result');
+    btn.addEventListener('click', () => {
+      const o = parseFloat(document.getElementById('obtained').value);
+      const t = parseFloat(document.getElementById('total').value);
+      if (Number.isNaN(o) || Number.isNaN(t)) {
+        out.textContent = 'Please enter both numbers.';
+        return;
+      }
+      const res = calculatePercentage(o, t);
+      out.textContent = res;
+    });
+    // allow Enter key on inputs
+    ['obtained','total'].forEach(id => {
+      document.getElementById(id).addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') btn.click();
+      });
+    });
+  </script>
+</body>
+</html>
